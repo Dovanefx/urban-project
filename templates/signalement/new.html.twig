@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Nouveau Signalement - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Ajouter un signalement</h1>
+
+<form method="POST">
+    <label>Titre:</label>
+    <input type="text" name="titre" required>
+    
+    <label>Description:</label>
+    <textarea name="description" required></textarea>
+    
+    <label>Statut:</label>
+    <select name="statut" required>
+        <option value="nouveau">Nouveau</option>
+        <option value="en_cours">En cours</option>
+        <option value="resolu">Résolu</option>
+    </select>
+    
+    <button type="submit">Ajouter</button>
+    <a href="{{ path('signalement_list') }}"><button type="button">Annuler</button></a>
+</form>
+{% endblock %}

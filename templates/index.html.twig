@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Bienvenue sur Urban Project</h1>
+<p>Gestion simple des citoyens, signalements et articles.</p>
+
+<h2>Qu'est-ce que vous voulez faire ?</h2>
+<ul>
+    <li><a href="{{ path('citoyen_list') }}">Gérer les citoyens</a></li>
+    <li><a href="{{ path('signalement_list') }}">Gérer les signalements</a></li>
+    <li><a href="{{ path('article_list') }}">Gérer les articles</a></li>
+</ul>
+{% endblock %}

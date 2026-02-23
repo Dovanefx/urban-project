@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modifier Citoyen - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Modifier: {{ citoyen.nom }}</h1>
+
+<form method="POST">
+    <label>Nom:</label>
+    <input type="text" name="nom" value="{{ citoyen.nom }}" required>
+    
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ citoyen.email }}" required>
+    
+    <button type="submit">Modifier</button>
+    <a href="{{ path('citoyen_list') }}"><button type="button">Annuler</button></a>
+</form>
+{% endblock %}

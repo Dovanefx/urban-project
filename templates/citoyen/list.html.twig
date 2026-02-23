@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Citoyens - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Citoyens</h1>
+<a href="{{ path('citoyen_new') }}"><button>Ajouter un citoyen</button></a>
+
+{% if citoyens|length > 0 %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for citoyen in citoyens %}
+            <tr>
+                <td>{{ citoyen.id }}</td>
+                <td>{{ citoyen.nom }}</td>
+                <td>{{ citoyen.email }}</td>
+                <td>
+                    <a href="{{ path('citoyen_edit', {id: citoyen.id}) }}"><button>Modifier</button></a>
+                    <form method="POST" action="{{ path('citoyen_delete', {id: citoyen.id}) }}" style="display:inline;" onsubmit="return confirm('Sûr?');">
+                        <button type="submit" class="danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Aucun citoyen trouvé.</p>
+{% endif %}
+{% endblock %}

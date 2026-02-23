@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modifier Article - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Modifier: {{ article.titre }}</h1>
+
+<form method="POST">
+    <label>Titre:</label>
+    <input type="text" name="titre" value="{{ article.titre }}" required>
+    
+    <label>Contenu:</label>
+    <textarea name="contenu" required>{{ article.contenu }}</textarea>
+    
+    <button type="submit">Modifier</button>
+    <a href="{{ path('article_list') }}"><button type="button">Annuler</button></a>
+</form>
+{% endblock %}

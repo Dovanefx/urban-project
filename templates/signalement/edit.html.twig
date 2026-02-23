@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Éditer Signalement - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Modifier: {{ signalement.titre }}</h1>
+
+<form method="POST">
+    <label>Titre:</label>
+    <input type="text" name="titre" value="{{ signalement.titre }}" required>
+    
+    <label>Description:</label>
+    <textarea name="description" required>{{ signalement.description }}</textarea>
+    
+    <label>Statut:</label>
+    <select name="statut" required>
+        <option value="nouveau" {% if signalement.statut == 'nouveau' %}selected{% endif %}>Nouveau</option>
+        <option value="en_cours" {% if signalement.statut == 'en_cours' %}selected{% endif %}>En cours</option>
+        <option value="resolu" {% if signalement.statut == 'resolu' %}selected{% endif %}>Résolu</option>
+    </select>
+    
+    <button type="submit">Modifier</button>
+    <a href="{{ path('signalement_list') }}"><button type="button">Annuler</button></a>
+</form>
+{% endblock %}

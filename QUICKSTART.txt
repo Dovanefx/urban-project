@@ -1,0 +1,88 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                  🏙️ URBAN PROJECT - DÉMARRAGE RAPIDE 🏙️                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 RÉSUMÉ EN 30 SECONDES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Urban Project = Application simple pour gérer 3 choses:
+  1. Citoyens (personnes en ville)
+  2. Signalements (problèmes en ville)
+  3. Articles (actualités)
+
+Chaque section a: Créer, Lire, Modifier, Supprimer
+
+
+🚀 5 ÉTAPES POUR DÉMARRER:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Ouvre un terminal dans le dossier urban-project
+
+2. Tape cette commande:
+   symfony serve
+
+3. Attends que le serveur démarre
+
+4. Ouvre ton navigateur sur:
+   http://127.0.0.1:8000
+
+5. Clique et explore! 🎉
+
+
+📍 LES 3 SECTIONS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  http://127.0.0.1:8000/citoyens/
+  http://127.0.0.1:8000/signalements/
+  http://127.0.0.1:8000/articles/
+
+
+✨ ESSAI RAPIDE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Va sur /citoyens/
+2. Clique "Créer un citoyen"
+3. Ecris: Nom = "Jean", Email = "jean@example.com"
+4. Clique "Ajouter"
+5. Jean apparaît dans la liste! ✅
+
+
+📁 OÙ SONT LES FICHIERS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  src/Entity/             ← Les modèles (Citoyen, Signalement, Article)
+  src/Controller/         ← La logique
+  templates/              ← Les pages HTML
+  var/data_dev.db         ← La base de données
+
+
+📚 DOCUMENTATION:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  README.md          ← Vue d'ensemble
+  GUIDE_SIMPLE.md    ← Comment utiliser l'app
+  ARCHITECTURE.md    ← Comment fonctionne le code
+  TESTS.md           ← Checklist complète
+
+
+⚠️ ARRÊTER LE SERVEUR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Dans le terminal: Appuie sur CTRL + C
+
+
+❌ ERROR COMMUNE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Q: "The local web server is already running"
+  A: Tape: symfony server:stop
+     Puis: symfony serve
+
+
+🎯 C'EST FINI! 🎉
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tu as maintenant une application Symfony complète qui fonctionne!
+C'est une base simple pour apprendre.
+
+Bon codage! 💻

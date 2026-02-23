@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Signalements - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Signalements</h1>
+<a href="{{ path('signalement_new') }}"><button>Ajouter un signalement</button></a>
+
+{% if signalements|length > 0 %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+        {% for signalement in signalements %}
+            <tr>
+                <td>{{ signalement.id }}</td>
+                <td>{{ signalement.titre }}</td>
+                <td>{{ signalement.statut }}</td>
+                <td>
+                    <a href="{{ path('signalement_edit', {id: signalement.id}) }}"><button>Modifier</button></a>
+                    <form method="POST" action="{{ path('signalement_delete', {id: signalement.id}) }}" style="display:inline;" onsubmit="return confirm('Sûr?');">
+                        <button type="submit" class="danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Aucun signalement trouvé.</p>
+{% endif %}
+{% endblock %}

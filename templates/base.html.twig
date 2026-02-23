@@ -2,16 +2,43 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
-
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Urban Project{% endblock %}</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+            header { background: #333; color: white; padding: 20px; text-align: center; margin: -20px -20px 20px -20px; }
+            h1 { color: #333; }
+            a { color: #0066cc; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            button { background: #0066cc; color: white; padding: 10px 15px; border: none; cursor: pointer; border-radius: 4px; }
+            button:hover { background: #0052a3; }
+            button.danger { background: #dc3545; }
+            button.danger:hover { background: #c82333; }
+            table { width: 100%; border-collapse: collapse; background: white; margin: 20px 0; }
+            table th, table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+            table th { background: #f8f9fa; font-weight: bold; }
+            table tr:hover { background: #f9f9f9; }
+            form { background: white; padding: 20px; border-radius: 4px; max-width: 500px; }
+            form input, form textarea, form select { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px; }
+            form button { margin-top: 15px; }
+            nav { margin-bottom: 30px; }
+            nav a { margin: 0 15px; color: white; }
+            .container { max-width: 1200px; margin: 0 auto; }
+        </style>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <h1>Urban Project</h1>
+            <nav>
+                <a href="{{ path('home') }}">Accueil</a>
+                <a href="{{ path('citoyen_list') }}">Citoyens</a>
+                <a href="{{ path('signalement_list') }}">Signalements</a>
+                <a href="{{ path('article_list') }}">Articles</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>

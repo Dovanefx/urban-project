@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Nouvel Article - Urban Project{% endblock %}
+
+{% block body %}
+<h1>Ajouter un article</h1>
+
+<form method="POST">
+    <label>Titre:</label>
+    <input type="text" name="titre" required>
+    
+    <label>Contenu:</label>
+    <textarea name="contenu" required></textarea>
+    
+    <button type="submit">Ajouter</button>
+    <a href="{{ path('article_list') }}"><button type="button">Annuler</button></a>
+</form>
+{% endblock %}
